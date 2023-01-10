@@ -6,7 +6,10 @@ CANVAS_HEIGHT = canvas.height = 1000;
 const numberOfNpcs = 100;
 const npcArray = [];
 
-class Enemy {
+const npcImage = new Image();
+npcImage.src = 'enemies/enemy1.png';
+
+class Npc {
   constructor() {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
@@ -20,11 +23,12 @@ class Enemy {
   }
   draw() {
     ctx.strokeRect(this.x, this.y, this.width, this.height);
+    ctx.drawImage(enemyImage);
   }
 };
 
 for (let i = 0; i < numberOfNpcs; i++) {
-  npcArray.push(new Enemy());
+  npcArray.push(new Npc());
 }
 
 function animate() {
