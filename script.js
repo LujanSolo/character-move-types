@@ -13,17 +13,19 @@ class Npc {
   constructor() {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
-    this.width = 100;
-    this.height = 100;
     this.speed = Math.random() * 4 - 2;
+    this.spriteWidth = 293;
+    this.spriteHeight = 155;
+    this.width = this.spriteWidth / 3;
+    this.height = this.spriteHeight / 3;
   }
   update() {
     this.x += this.speed;
     this.y += this.speed;
   }
   draw() {
-    ctx.strokeRect(this.x, this.y, this.width, this.height);
-    ctx.drawImage(enemyImage);
+    ctx.roundRect(this.x, this.y, this.width, this.height);
+    ctx.drawImage(npcImage, 0, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
   }
 };
 
