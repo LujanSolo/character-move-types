@@ -23,7 +23,9 @@ class Enemy {
 };
 
 // const enemy1 = new Enemy();
-for (let i = 0; i < numberOfNpcs; i++)
+for (let i = 0; i < numberOfNpcs; i++) {
+  npcArray.push(new Enemy());
+}
 
   function animate() {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
